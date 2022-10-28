@@ -45,6 +45,34 @@ A simple sinewave generator can be designed with combining  counter.sv and rom.s
 
 <img width="261" alt="Screenshot 2022-10-27 at 11 02 45" src="https://user-images.githubusercontent.com/115703122/198255629-04465f5e-c66f-4df6-98f1-de633f0aba75.png">
 
+The increment works, as taking the sine generated values but in a shorter time period, as it can go through the loop of values faster producing more waves in a given time frame. 
+
+<img width="452" alt="Screenshot 2022-10-28 at 10 27 53" src="https://user-images.githubusercontent.com/115703122/198554260-232f3097-8fc9-4420-8691-6c30eac46024.png">
+
+We then edited the counter.sv to now count up by increment. I also removed the reset from always ff as this is a sychronous clock. Finally I added the 8 bit increatment as an input. This implemented the increment function within counter.   
+
+<img width="413" alt="Screenshot 2022-10-28 at 10 42 17" src="https://user-images.githubusercontent.com/115703122/198557312-f5975f0a-6ab4-483c-bd28-b190f7542ac8.png">
+
+## STEP 3
+
+Create the testbench for sinegen:
+
+<img width="542" alt="Screenshot 2022-10-28 at 10 32 17" src="https://user-images.githubusercontent.com/115703122/198555184-62a6be94-809a-4abe-900c-48223e57e897.png">
+
+
+Here are two things you should do:
+
+Since you are generating a continuous sinewave, the number of simulation cycle should be increased to a large value, say, 1,000,000!
+Because of this large number of simulation cycles before termination, you need to have an elegant way to exit the simulation. Use the vbdGetkey() function to check if a key has been pressed. This can be achieved with the following code snippet to exit the simulation any time you press the 'q' key:
+
+
+## STEP 4
+
+Modify the shell script doit.sh:
+
+<img width="591" alt="Screenshot 2022-10-28 at 10 49 01" src="https://user-images.githubusercontent.com/115703122/198558655-ae702857-7ae9-429a-96c3-cf3f0817cbcf.png">
+
+
 
 
 
