@@ -28,9 +28,9 @@ The correct approach was two offset within rom.sv as this worked to offset the a
 
 In order to set the phase shift to VbdValue():
 
-We couldn't call VbdValue() as the cpp is the executable file. Instead in order to change the address I set the address offset to increment and then with the test bench function I set incr = VbdValue()
+We couldn't call VbdValue() as the cpp is the executable file. Instead in order to change the address I set the address offset to increment and then with the test bench function I set incr = VbdValue(), within sinegen.sv
 
-<img width="383" alt="Screenshot 2022-10-28 at 11 47 56" src="https://user-images.githubusercontent.com/115703122/198569929-59dd502e-e88c-4a3b-be09-56707f0f045b.png">
+<img width="313" alt="Screenshot 2022-10-29 at 02 06 55" src="https://user-images.githubusercontent.com/115703122/198754956-c58ebf2d-9d0f-4f39-977b-34b7962c0e06.png">
 
 As the graph was changing increment and offset, I changed the counter.sv to increment by a constant 3 instead:
 
