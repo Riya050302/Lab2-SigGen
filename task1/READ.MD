@@ -72,6 +72,9 @@ Modify the shell script doit.sh:
 
 <img width="591" alt="Screenshot 2022-10-28 at 10 49 01" src="https://user-images.githubusercontent.com/115703122/198558655-ae702857-7ae9-429a-96c3-cf3f0817cbcf.png">
 
+OUTPUT:
+
+<img width="698" alt="Screenshot 2022-10-29 at 02 08 36" src="https://user-images.githubusercontent.com/115703122/198755021-9a6078e2-522c-4c43-8158-c006d65a8dca.png">
 
 
 
