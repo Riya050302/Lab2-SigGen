@@ -18,11 +18,11 @@ I added an additional VbdPlot() function to plot both outputs:
 
 <img width="308" alt="Screenshot 2022-10-28 at 11 33 13" src="https://user-images.githubusercontent.com/115703122/198567297-8bf958be-6e96-4514-ac7a-51989dd95e48.png">
 
-My first attempt to pahse shift was changing the output by 90 degrees howver instead of shifting right this shifted upwards:
+My first attempt to pahse shift was changing the output by 90 degrees however instead of shifting right this shifted upwards, as it shifted the function not the sine values:
 
 <img width="461" alt="Screenshot 2022-10-28 at 11 33 59" src="https://user-images.githubusercontent.com/115703122/198567451-a50dd1af-f61a-4124-b8f5-08d7443db702.png">
 
-The correct approach was two offset within rom.sv as this worked to offset the address input by 90 degrees:
+The correct approach was two offset within rom.sv as this worked to offset the address input by 90 degrees, as by shifting the address the dout will output later values contained within the sinegen file and will output a shifted graph:
 
 <img width="434" alt="Screenshot 2022-10-28 at 11 34 46" src="https://user-images.githubusercontent.com/115703122/198567584-6d589a03-4e96-4b98-9cfe-b1dd6bf690d8.png">
 
@@ -32,7 +32,7 @@ We couldn't call VbdValue() as the cpp is the executable file. Instead in order 
 
 <img width="313" alt="Screenshot 2022-10-29 at 02 06 55" src="https://user-images.githubusercontent.com/115703122/198754956-c58ebf2d-9d0f-4f39-977b-34b7962c0e06.png">
 
-As the graph was changing increment and offset, I changed the counter.sv to increment by a constant 3 instead:
+As the graph was changing increment and offset, I changed the counter.sv to increment by a constant 3 instead (I picked 3 as it would produce a clearer graph than an increment of 1):
 
 <img width="373" alt="Screenshot 2022-10-28 at 11 52 18" src="https://user-images.githubusercontent.com/115703122/198570616-dd25f21e-6f3b-4beb-aa38-9b96ffd4688a.png">
 
