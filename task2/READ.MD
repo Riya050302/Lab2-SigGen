@@ -18,9 +18,11 @@ I added an additional VbdPlot() function to plot both outputs:
 
 <img width="308" alt="Screenshot 2022-10-28 at 11 33 13" src="https://user-images.githubusercontent.com/115703122/198567297-8bf958be-6e96-4514-ac7a-51989dd95e48.png">
 
-My first attempt to pahse shift was changing the output by 90 degrees however instead of shifting right this shifted upwards, as it shifted the function not the sine values:
+My first attempt to phase shift was changing the output by 90 degrees however instead of shifting right this shifted upwards, as it shifted the function not the sine values:
 
 <img width="461" alt="Screenshot 2022-10-28 at 11 33 59" src="https://user-images.githubusercontent.com/115703122/198567451-a50dd1af-f61a-4124-b8f5-08d7443db702.png">
+
+<img width="1046" alt="Screenshot 2022-10-31 at 19 57 17" src="https://user-images.githubusercontent.com/115703122/199098993-b7f5b3e7-b6b3-47ab-ad00-0bbc48e4d29c.png">
 
 The correct approach was two offset within rom.sv as this worked to offset the address input by 90 degrees, as by shifting the address the dout will output later values contained within the sinegen file and will output a shifted graph:
 
@@ -35,6 +37,12 @@ We couldn't call VbdValue() as the cpp is the executable file. Instead in order 
 As the graph was changing increment and offset, I changed the counter.sv to increment by a constant 3 instead (I picked 3 as it would produce a clearer graph than an increment of 1):
 
 <img width="373" alt="Screenshot 2022-10-28 at 11 52 18" src="https://user-images.githubusercontent.com/115703122/198570616-dd25f21e-6f3b-4beb-aa38-9b96ffd4688a.png">
+
+By setting the offset value to 64, the two waveforms will be exactly 90 degrees apart in their phases, making one a sinewave and the other a cosine wave at the same frequency. These signals, called "quadrature signals", are often used in communication systems.
+
+<img width="740" alt="Screenshot 2022-10-31 at 19 56 36" src="https://user-images.githubusercontent.com/115703122/199098909-4a085ca4-67e8-4399-8a35-0e920f969a51.png">
+
+
 
 
 
