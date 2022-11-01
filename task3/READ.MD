@@ -41,8 +41,16 @@ Next, I sent the data input to the Mic input and the offset to vbdValue().
 <img width="364" alt="Screenshot 2022-10-29 at 02 00 13" src="https://user-images.githubusercontent.com/115703122/198754708-708ff393-ff57-4386-b746-1299c4a209bc.png">
 
 Finally, I used the vbdValue() function to vary this offset using the rotary encoder, plotting both the write and read data on the Vbuddy display (using vbdPlot() function). This meant that it plots data that has been read as well as plotting the same graph now with a phase shift of vdbvalue written onto it. 
+
 <img width="448" alt="Screenshot 2022-10-29 at 02 03 33" src="https://user-images.githubusercontent.com/115703122/198754820-888f5311-a033-450a-9468-c7a43daa1f9c.png">
 
 OUTPUT IMAGE:
 
+Response when sine wave produced by tone generator:
+
+<img width="433" alt="Screenshot 2022-11-01 at 00 03 36" src="https://user-images.githubusercontent.com/115703122/199131447-647f829b-7a60-4896-9335-8bee7d5bb6d1.png">
+
+Response when square produced by tone generator
+
+<img width="423" alt="Screenshot 2022-11-01 at 00 04 04" src="https://user-images.githubusercontent.com/115703122/199131483-d6598965-c729-44f8-9fc8-c18605313be3.png">
 
