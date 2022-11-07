@@ -76,6 +76,15 @@ Here are two things you should do:
 Since you are generating a continuous sinewave, the number of simulation cycle should be increased to a large value, say, 1,000,000!
 Because of this large number of simulation cycles before termination, you need to have an elegant way to exit the simulation. Use the vbdGetkey() function to check if a key has been pressed. This can be achieved with the following code snippet to exit the simulation any time you press the 'q' key:
 
+**New Function Learned**\
+*vbdGetkey()*: used to check if a key has been pressed. 
+
+```
+//exits if 'q' key pressed
+ if ((vbdGetkey()=='q')) 
+      exit(0); 
+```
+
 
 ## STEP 4
 
