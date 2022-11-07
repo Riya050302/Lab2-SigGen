@@ -35,6 +35,14 @@ Shown here is a 256 x 8 bit ROM model in SystemVerilog. This is specified as a s
 <img width="268" alt="Screenshot 2022-10-27 at 10 37 37" src="https://user-images.githubusercontent.com/115703122/198249697-29794a81-0182-4e80-9a8f-b2f7a67652ed.png"> 
 <img width="582" alt="Screenshot 2022-10-27 at 10 38 05" src="https://user-images.githubusercontent.com/115703122/198249817-5d07e0db-acce-4ea6-a841-e9f4020e4847.png">
 
+Structure of Code:
+
+- define parameters (ADDRESS_WIDTH and DATA_WIDTH). The reason we use parameters (which are like variables) is so that when we instantiate the module in code [rom sineRom(clk, 10, 12)] this would mean the ADDRESS_WIDTH and DATA_WIDTH would get overwritten with new values 10 and 12 respectively. This allows reusablity of modules (as opposed to using 8 and 8 throughout the code).
+- define input and output (INPUTS: clock signal, address of ROM; OUTPUTS: data-value in ROM address). The notation [(ADDRESS_WIDTH-1):0] means the input should be in the form [(8-1):0] or [7:0].
+- (logic) used to define a binary signal (logic signal) which is a signal type (rather than datatype like int)
+
+<img width="658" alt="Screenshot 2022-11-07 at 01 56 47" src="https://user-images.githubusercontent.com/115703122/200211119-5c8995a6-1cb6-45ed-9098-2ab7bf274ff5.png">
+
 ## STEP 2 
 
  Next we create the sinegen module: This requires you to create a "top-level" module sinegen.sv, which includes two components: counter.sv and rom.sv as shown below.
@@ -45,7 +53,10 @@ A simple sinewave generator can be designed with combining  counter.sv and rom.s
 
 <img width="261" alt="Screenshot 2022-10-27 at 11 02 45" src="https://user-images.githubusercontent.com/115703122/198255629-04465f5e-c66f-4df6-98f1-de633f0aba75.png">
 
-The increment works, as taking the sine generated values but in a shorter time period, as it can go through the loop of values faster producing more waves in a given time frame. 
+The increment works, as taking the sine generated values but in a shorter time period, as it can go through the loop of values faster producing more waves in a given time frame.
+
+The output of the counter is the address input in the ROM
+In this manner we are able to traverse through the ROM addresses using the counter. As the ROM contains the coordinates for a sinusoid, the dout of the ROM helps plot the sine wave
 
 <img width="452" alt="Screenshot 2022-10-28 at 10 27 53" src="https://user-images.githubusercontent.com/115703122/198554260-232f3097-8fc9-4420-8691-6c30eac46024.png">
 
